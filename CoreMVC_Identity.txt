@@ -1,0 +1,7 @@
+﻿1. Создать проект MVC
+2. Выбрать для проекта New scaffolded item (Создать шаблонный элемент) и добавить Views для Identity (установить и обновить пакеты)
+3. Создать начальную миграцию
+4. Добавить поля FirstName, LastName в класс ApplicationUser
+5. Добавить миграцию с новыми полями
+6. Добавить поля FirstName, LastName на форму Register.cshtml
+7. Добавить поля FirstName, LastName в код регистрации в файл Register.cshtml.cs

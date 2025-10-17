@@ -1,0 +1,57 @@
+﻿@model CoreMVC_Identity.ViewModels.AdministrationFormViewModel
+
+@{
+    ViewBag.Title = "Users and roles";
+}
+
+<h2>Roles</h2>
+
+<table id="roles" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Role Id</th>
+            <th>Role name</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model.Roles)
+        {
+            <tr>
+                <td>@role.Id</td>
+                <td>@role.Name</td>
+                <td>@Html.ActionLink("Delete", "DeleteRole", "Administration", new { @id = role.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</br>
+<button class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("NewRole", "Administration") + "'");">New role</button>
+
+<h2>Users</h2>
+
+<table id="users" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>User name</th>
+            <th>Email</th>
+            <th>Password hash</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.PasswordHash</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Administration", new { @id = user.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</br>
+<button class="btn btn-primary" onclick="@("window.location.href='" + @Url.Action("New", "Administration") + "'");">New user</button>
