@@ -37,7 +37,7 @@ public partial class Author
     public string? Address { get; set; }
 
     [Column("city")]
-    [StringLength(20)]
+    [StringLength(21)]
     [Unicode(false)]
     public string? City { get; set; }
 
